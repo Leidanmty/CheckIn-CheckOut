@@ -19,7 +19,7 @@ const Employee = db.define("employee", {
   status: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: "active",
+    defaultValue: "working",
   },
 });
 
