@@ -2,6 +2,7 @@ const { application } = require("express");
 const express = require("express");
 
 //Routes
+const { employeeRouter } = require("./routes/employees.routes");
 
 //Init our Express app
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.json()); //Middleware
 
 //Define Endpoints
+app.use(employeeRouter);
 
 app.all("*", (req, res) => {
   res.status(404).json({

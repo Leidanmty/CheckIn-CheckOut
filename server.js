@@ -6,7 +6,7 @@ const { db } = require("./utils/database.utils");
 const startServer = async () => {
   try {
     await db.authenticate();
-    await db.sync();
+    await db.sync({ force: true });
 
     //Set server
     const PORT = 3000;
