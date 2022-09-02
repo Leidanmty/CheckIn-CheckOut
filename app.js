@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json()); //Middleware
 
 //Define Endpoints
-app.use(employeeRouter);
+app.use('/api/v1/employees', employeeRouter);
 
 app.all("*", (req, res) => {
   res.status(404).json({
