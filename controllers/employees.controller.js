@@ -18,6 +18,7 @@ const getAllEmployees = async (req, res) => {
 
 const getOneEmployee = async (req, res) => {
   try {
+    const { id } = req.params;
     const employee = await Employee.findOne({where: {id}});
 
     if(!employee){
@@ -93,7 +94,7 @@ const deleteEmployee = async (req, res) => {
       });
     }
 
-    await Employee.update({status: 'canceled'});
+    await Employee.update({status: 'Cancel'});
 
     res.status(204).json ({status: 'success'});
   } catch (error) {
